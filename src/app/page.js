@@ -32,6 +32,9 @@ export default function Home() {
     setTasks(newTasks);
   };
 
+  const allTasksCount = tasks.length;
+  const completedTasksCount = tasks.filter((task) => task.completed).length;
+
   return (
     // Main container
     <div className="container mx-auto">
@@ -41,7 +44,7 @@ export default function Home() {
       <div style={{ maxWidth: "400px" }} className="mx-auto">
         {/* Task summary */}
         <p className="text-center text-secondary fst-italic">
-          All (...) Done (...)
+          All ({allTasksCount}) Done Done ({completedTasksCount})
         </p>
         {/* task input */}
         <TaskInput addTaskFunc={addTask} />
